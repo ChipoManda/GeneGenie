@@ -1,0 +1,12 @@
+# Title to use for the report
+title: "RNA-Seq Analysis Report"
+
+# Whether to create the data directory alongside the report
+make_data_dir: true
+
+# Custom CSS to include in the report
+custom_css: |
+    #multiqc_report .section-header {
+        color: #333333;
+    }
+

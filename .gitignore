@@ -1,0 +1,125 @@
+# Large sequencing data files
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.sra
+
+# Alignment files
+*.bam
+*.sam
+*.bai
+*.cram
+
+# Reference files 
+*.fa
+*.fasta
+*.gtf
+*.gff
+*.bed
+*.fna
+
+# Nextflow
+.nextflow*
+.nextflow/
+work/
+data/
+results/
+*.log.*
+*.log
+
+# Pipeline outputs & data 
+before_picard_output/
+after_picard_output/
+DELETE/
+data/raw/
+data/processed/
+containers/
+ecoli_paired_FSH/
+
+# Intermediate files
+*.tmp
+*.log
+*.err
+*.out
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Conda environments
+conda-env/
+.conda/
+
+# R
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+*.Rproj
+.Rproj.user/
+
+# System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Keep empty directories
+!.gitkeep
+
+# Add core pipeline files
+git add main.nf
+git add nextflow.config
+git add multiqc_config.yaml
+git add nextflowrun.sh
+git add .gitignore
+git add containers.sh
+
+# Add code directories (should be small since large files are ignored)
+git add modules/
+git add workflows/
+
+
+echo "output/" >> .gitignore
+echo "containers/" >> .gitignore  
+echo "ecoli_paired_FSH/" >> .gitignore
+echo "build/" >> .gitignore
+echo "tmp/" >> .gitignore  
+echo "reference/" >> .gitignore
