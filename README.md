@@ -30,14 +30,12 @@ project_root/
 ├── nextflow.config                 # Main configuration file
 ├── multiqc_config.yaml             # MultiQC configuration
 │
-├── reference/                      # Reference genome files
+├── reference/                      # Reference files
+│   ├── data
 │   ├── genomic_h37rv.gtf           # GTF annotation file
 │   └── genomic_h37rv.fna           # Genome FASTA file
 │
 ├── containers/                     
-│    ├── htseq_subread_trim-galore_aeb6b8b7800db0b0.sif           
-│    ├── bowtie2_fastp_samtools_star_pruned:5f151da513ade4ad.sif
-│    └── multiqc_seqkit_eae582eb4fa63f1b.sif
 │
 │
 └──  output/
