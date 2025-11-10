@@ -44,7 +44,7 @@ project_root/
 This pipeline uses the following Singularity containers from BioContainers:
 
 - `bowtie2:2.5.2--12e15c204b09f691` - Read alignment
-- `star:2.7.11b--84fcc19fdfab53a4` - Read alignment  
+- `star:2.7.11a--0f5e3d475719bcac` - Read alignment  
 - `htseq:2.0.3--3205f67d4c550865` - Read counting
 - `fastp:0.23.4--b69359f46d2a8ebf` - Read Quality control and trimming
 - `trim-galore:0.6.10--bc38c9238980c80e` - Quality control and adapter trimming
