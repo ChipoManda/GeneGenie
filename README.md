@@ -25,20 +25,22 @@ The pipeline is implemented in Nextflow DSL2, ensuring reproducibility and scala
 
 ### Project directory structure:
 ```
-project_root/
-├── genegenie.nf                    # Your main Nextflow workflow script
-├── nextflow.config                 # Main configuration file
-├── multiqc_config.yaml             # MultiQC configuration
-│
-├── reference/                      # Reference files
-│   ├── data
-│   ├── genome.gtf                  # GTF annotation file
-│   └── genome.fasta                # Reference genome FASTA file
-│
-├── containers/                     
-│
-│
-└──  output/
+GeneGenie-1.0.0/
+  ├── containers/
+  ├── modules/
+  ├── output/
+  ├── reference/                     
+  │   ├── data
+  │   ├── genome.gtf                 
+  │   └── genome.fasta               
+  ├── workflows
+  │   └── rnaseq.nf                 
+  ├── genegenie.nf                                    
+  ├── multiqc_config.yaml             
+  ├── nextflow.config
+  ├── nextflowrun.sh
+  └── README.md
+                    
 ```
 ### Downloading containers
 This pipeline uses the following Singularity containers from BioContainers:
