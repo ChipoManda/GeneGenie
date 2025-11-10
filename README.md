@@ -104,7 +104,7 @@ nextflow run genegenie.nf -profile TSF \
   --max_memory 16.GB \
   --max_time 48.h \
   --read_type single
----
+```
 
 ## 🛠️ Workflow Steps
 
