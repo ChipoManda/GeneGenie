@@ -57,7 +57,7 @@ This pipeline uses the following Singularity containers from BioContainers:
 - `multiqc:1.21--d44678e7b9933bf6` - Reporting
 
 
-example of Command to download sstar container: 
+*Example of command to download star container:* 
 
 `singularity pull oras://community.wave.seqera.io/library/star:2.7.11a--0f5e3d475719bcac`
 
