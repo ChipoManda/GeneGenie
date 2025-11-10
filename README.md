@@ -23,6 +23,26 @@ The pipeline is implemented in Nextflow DSL2, ensuring reproducibility and scala
 
 ## 🏃‍♂️ Usage
 
+### Project directory structure:
+
+project_root/
+├── genegenie.nf                    # Your main Nextflow workflow script
+├── nextflow.config                 # Main configuration file
+├── multiqc_config.yaml             # MultiQC configuration
+│
+├── reference/                      # Reference genome files
+│   ├── genomic_h37rv.gtf           # GTF annotation file
+│   └── genomic_h37rv.fna           # Genome FASTA file
+│
+├── containers/                     
+│    ├── htseq_subread_trim-galore_aeb6b8b7800db0b0.sif           
+│    ├── bowtie2_fastp_samtools_star_pruned:5f151da513ade4ad.sif
+│    └── multiqc:1.21--d44678e7b9933bf6.sif
+│
+│
+└──  output/
+
+
 ### Running with a Profile
 
 GeneGenie supports several profiles for six tool combinations. Use the `-profile` flag to select a profile:
@@ -36,7 +56,7 @@ GeneGenie supports several profiles for six tool combinations. Use the `-profile
 | TSH     | trimgalore  | star     | htseq            |
 | TSF     | trimgalore  | star     | featurecounts    |
 
-**Example:**
+**Example use:**
 ```bash
 nextflow run GeneGenie.nf -profile TBF
 ```
