@@ -24,7 +24,7 @@ The pipeline is implemented in Nextflow DSL2, ensuring reproducibility and scala
 ## 🏃‍♂️ Usage
 
 ### Project directory structure:
-
+```
 project_root/
 ├── genegenie.nf                    # Your main Nextflow workflow script
 ├── nextflow.config                 # Main configuration file
@@ -41,7 +41,7 @@ project_root/
 │
 │
 └──  output/
-
+```
 
 ### Running with a Profile
 
