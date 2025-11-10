@@ -82,15 +82,18 @@ nextflow run GeneGenie.nf -profile TBF
 
 ### Custom Parameters
 
-You may override any parameter at runtime:
+You may override parameters at runtime:
 
 ```bash
-nextflow run GeneGenie.nf \
-  --input /path/to/samplesheet.csv \
-  --read_type paired or single \
+nextflow run genegenie.nf -profile TSF \
+  --input /path/to/reference/samplesheet.csv \
   --outdir /path/to/output \
-  --genome_fasta /path/to/genomic_h37rv.fna \
-  --gtf /path/to/genomic_h37rv.gtf
+  --gtf /path/to/reference/genomic.gtf \
+  --genome_fasta /path/to/reference/genomic.fna \
+  --max_cpus 8 \
+  --max_memory 16.GB \
+  --max_time 48.h \
+  --read_type single
 ```
 
 **Main parameters:**
