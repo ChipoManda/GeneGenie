@@ -25,7 +25,7 @@ The pipeline is implemented in Nextflow DSL2, ensuring reproducibility and scala
 
 ### Project directory structure:
 ```
-GeneGenie-1.0.0/
+GeneGenie-1.0/
   ├── containers/
   ├── modules/
   ├── output/
