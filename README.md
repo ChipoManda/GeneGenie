@@ -91,8 +91,9 @@ nextflow run GeneGenie.nf -profile TBF
 - `--qc_tool`: `trimgalore` or `fastp`
 - `--aligner`: `bowtie2` or `star`
 - `--quantification`: `featurecounts` or `htseq`
+```
 
-You may override parameters at runtime like so:
+**You may override parameters at runtime like so:**
 
 ```bash
 nextflow run genegenie.nf -profile TSF \
