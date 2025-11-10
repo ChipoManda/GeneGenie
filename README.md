@@ -32,8 +32,8 @@ project_root/
 │
 ├── reference/                      # Reference files
 │   ├── data
-│   ├── genomic_h37rv.gtf           # GTF annotation file
-│   └── genomic_h37rv.fna           # Genome FASTA file
+│   ├── genome.gtf                  # GTF annotation file
+│   └── genome.fasta                # Reference genome FASTA file
 │
 ├── containers/                     
 │
