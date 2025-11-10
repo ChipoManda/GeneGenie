@@ -13,6 +13,7 @@ include { HTSEQ_COUNT } from '../modules/htseq'
 include { MULTIQC } from '../modules/multiqc'
 include { SEQKIT_STATS } from '../modules/seqkit_stats'
 
+
 workflow RNASEQ {
     take:
     input_csv
@@ -143,7 +144,7 @@ workflow RNASEQ {
         trimmed_reads = valid_reads
         }
 
-    // Alignment 
+    // Alignment (including index building if necessary)
     if (params.aligner == 'star') {
         STAR_INDEX(genome_fasta, gtf)
         star_index = STAR_INDEX.out.index
@@ -176,6 +177,10 @@ workflow RNASEQ {
     // SAMtools sort
     SAMTOOLS_SORT(bam_files)
         sorted_bam = SAMTOOLS_SORT.out.bam
+        
+
+
+    
         
     // Quantification
     if (params.quantification == 'featurecounts') {
