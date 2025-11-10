@@ -2,7 +2,7 @@
 
 GeneGenie is a modular, containerized workflow for preprocessing *Mycobacterium tuberculosis* RNA-seq data. 
 
-It supports both single- and paired-end sequencing formats and provides robust quality control, alignment, quantification, and reporting. 
+It supports both single- and paired-end sequencing formats and performs quality control, alignment, quantification, and reporting. 
 
 The pipeline is implemented in Nextflow DSL2, ensuring reproducibility and scalability.
 
@@ -13,11 +13,11 @@ The pipeline is implemented in Nextflow DSL2, ensuring reproducibility and scala
 - **Input Validation:** Uses `seqkit` for FASTQ validation; invalid samples are excluded and reported.
 - **Quality Control & Trimming:** Supports `trimgalore` and `fastp` for adapter and quality trimming.
 - **Alignment:** Offers `bowtie2` and `STAR` aligners, with automatic index generation.
-- **BAM Processing:** SAM to BAM conversion, sorting, and duplicate marking using `samtools` and `Picard`.
+- **BAM Processing:** SAM to BAM conversion, sorting using `samtools`
 - **Quantification:** Supports both `featureCounts` and `HTSeq` for gene-level quantification.
 - **Comprehensive Reporting:** Aggregates QC and summary metrics via `MultiQC`.
-- **Containerized Execution:** Each process runs in a dedicated Singularity container for reproducibility.
-- **Parameter Profiles:** Predefined profiles for common tool combinations.
+- **Containerized Execution:** The pipeline runs in a dedicated Singularity container for reproducibility.
+- **Parameter Profiles:** Predefined profiles for possible tool combinations.
 
 ---
 
@@ -25,7 +25,7 @@ The pipeline is implemented in Nextflow DSL2, ensuring reproducibility and scala
 
 ### Running with a Profile
 
-GeneGenie supports several profiles for common analysis scenarios. Use the `-profile` flag to select a profile:
+GeneGenie supports several profiles for six tool combinations. Use the `-profile` flag to select a profile:
 
 | Profile | QC Tool     | Aligner  | Quantification   |
 |---------|-------------|----------|------------------|
@@ -73,9 +73,9 @@ nextflow run GeneGenie.nf \
 | Input Validation    | seqkit                 | `seqkit/`               |
 | QC & Trimming       | trimgalore / fastp     | `trimgalore/` or `fastp/` |
 | Alignment           | bowtie2 / STAR         | `bowtie2/` or `star/`   |
-| BAM Processing      | samtools, Picard       | `samtools/`, `picard/`  |
+| BAM Processing      | samtools               | `samtools/`  |
 | Quantification      | featureCounts / HTSeq  | `featurecounts/` or `htseq/` |
-| Reporting           | MultiQC                | `multiqc_report.html`   |
+| Reporting           | MultiQC                | `multiqc/`   |
 
 All output files are organized under the specified `--outdir`.
 
@@ -86,7 +86,7 @@ All output files are organized under the specified `--outdir`.
 - `seqkit/validation_results.txt`: Per-sample validation status.
 - `trimgalore/`, `fastp/`: Cleaned FASTQ and QC logs.
 - `bowtie2/`, `star/`: Alignment files (SAM/BAM).
-- `samtools/`, `picard/`: Sorted BAMs, alignment metrics.
+- `samtools/`: Sorted BAMs, alignment metrics.
 - `featurecounts/`, `htseq/`: Gene count tables.
 - `multiqc_report.html`: Aggregated summary report.
 - `pipeline_info/`: Execution reports, timeline, trace, and DAG.
@@ -96,19 +96,19 @@ All output files are organized under the specified `--outdir`.
 ## ⚡ Requirements
 
 - Nextflow 21.04.0 or higher
-- Apptainer/Singularity (recommended; all tools run in SIF containers)
+- Apptainer/Singularity
 - Sufficient disk space for intermediate and output files
 
 ---
 
-## 🧠 Notes
+## 🧠 Note
 
 - Invalid samples are excluded after validation and reported in the output.
 
 ---
 
 
-> GeneGenie provides a robust, reproducible workflow for *M. tuberculosis* RNA-seq preprocessing.  
+> GeneGenie provides a flexible, reproducible workflow for *M. tuberculosis* RNA-seq preprocessing.  
 >  
 > 🧞‍♂️ Reliable, containerized, and modular.
 ---
