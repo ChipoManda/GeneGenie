@@ -37,7 +37,7 @@ project_root/
 ├── containers/                     
 │    ├── htseq_subread_trim-galore_aeb6b8b7800db0b0.sif           
 │    ├── bowtie2_fastp_samtools_star_pruned:5f151da513ade4ad.sif
-│    └── multiqc:1.21--d44678e7b9933bf6.sif
+│    └── multiqc_seqkit_eae582eb4fa63f1b.sif
 │
 │
 └──  output/
