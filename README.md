@@ -128,7 +128,7 @@ All output files are organized under the specified `--outdir`.
 ---
 
 
-> GeneGenie provides a flexible, reproducible workflow for *M. tuberculosis* RNA-seq preprocessing.  
+> GeneGenie   
 >  
 > 🧞‍♂️ Reproducible, containerized, and modular workflow for *M. tuberculosis* RNA-seq preprocessing
 ---
