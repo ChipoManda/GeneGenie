@@ -82,7 +82,6 @@ nextflow run GeneGenie.nf -profile TBF
 
 ### Main parameters
 
-```
 - `--input`: Path to input CSV file (required)
 - `--read_type`: `single` or `paired` (default: `paired`)
 - `--outdir`: Output directory (default: `${projectDir}/output`)
@@ -91,7 +90,7 @@ nextflow run GeneGenie.nf -profile TBF
 - `--qc_tool`: `trimgalore` or `fastp`
 - `--aligner`: `bowtie2` or `star`
 - `--quantification`: `featurecounts` or `htseq`
-```
+
 
 **You may override parameters at runtime like so:**
 
