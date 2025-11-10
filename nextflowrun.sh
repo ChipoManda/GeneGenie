@@ -1,1 +1,1 @@
-nextflow run main.nf -profile TSF
+nextflow run genegenie.nf -profile TSF

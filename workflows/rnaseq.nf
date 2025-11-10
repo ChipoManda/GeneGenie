@@ -12,7 +12,6 @@ include { FEATURECOUNTS } from '../modules/featurecounts'
 include { HTSEQ_COUNT } from '../modules/htseq'
 include { MULTIQC } from '../modules/multiqc'
 include { SEQKIT_STATS } from '../modules/seqkit_stats'
-include { PICARD_MARK_DUPLICATES} from '../modules/picard'
 
 workflow RNASEQ {
     take:
@@ -144,7 +143,7 @@ workflow RNASEQ {
         trimmed_reads = valid_reads
         }
 
-    // Alignment (including index building if necessary)
+    // Alignment 
     if (params.aligner == 'star') {
         STAR_INDEX(genome_fasta, gtf)
         star_index = STAR_INDEX.out.index
@@ -178,23 +177,6 @@ workflow RNASEQ {
     SAMTOOLS_SORT(bam_files)
         sorted_bam = SAMTOOLS_SORT.out.bam
         
-
-    // Picard MarkDuplicates
-    
-    PICARD_MARK_DUPLICATES(
-        sorted_bam.map { tuple -> 
-            def (meta, bam) = tuple // Deconstruct the tuple into meta and bam
-            [meta, bam]
-        }
-            
-    )
-    
-    // Add Picard output to MultiQC input
-    ch_multiqc_files = ch_multiqc_files.mix(
-        PICARD_MARK_DUPLICATES.out.metrics.map { meta, metrics -> [meta, metrics] }
-    )
-    
-        
     // Quantification
     if (params.quantification == 'featurecounts') {
         FEATURECOUNTS(sorted_bam, gtf)
@@ -224,8 +206,6 @@ workflow RNASEQ {
         trimmed_reads = trimmed_reads
         aligned_reads = aligned_reads
         bam_files     = bam_files
-        picard_bam = PICARD_MARK_DUPLICATES.out.bam
-        picard_metrics = PICARD_MARK_DUPLICATES.out.metrics
         sorted_bam    = sorted_bam
         counts        = ch_counts
         counts_summary = ch_summary
