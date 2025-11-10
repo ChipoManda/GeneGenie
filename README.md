@@ -80,9 +80,19 @@ GeneGenie supports several profiles for six tool combinations. Use the `-profile
 nextflow run GeneGenie.nf -profile TBF
 ```
 
-### Custom Parameters
+### Main parameters
 
-You may override parameters at runtime:
+```
+- `--input`: Path to input CSV file (required)
+- `--read_type`: `single` or `paired` (default: `paired`)
+- `--outdir`: Output directory (default: `${projectDir}/output`)
+- `--genome_fasta`: Reference genome FASTA file (required)
+- `--gtf`: GTF annotation file (required for quantification)
+- `--qc_tool`: `trimgalore` or `fastp`
+- `--aligner`: `bowtie2` or `star`
+- `--quantification`: `featurecounts` or `htseq`
+
+You may override parameters at runtime like so:
 
 ```bash
 nextflow run genegenie.nf -profile TSF \
@@ -94,18 +104,6 @@ nextflow run genegenie.nf -profile TSF \
   --max_memory 16.GB \
   --max_time 48.h \
   --read_type single
-```
-
-**Main parameters:**
-- `--input`: Path to input CSV file (required)
-- `--read_type`: `single` or `paired` (default: `paired`)
-- `--outdir`: Output directory (default: `${projectDir}/output`)
-- `--genome_fasta`: Reference genome FASTA file (required)
-- `--gtf`: GTF annotation file (required for quantification)
-- `--qc_tool`: `trimgalore` or `fastp`
-- `--aligner`: `bowtie2` or `star`
-- `--quantification`: `featurecounts` or `htseq`
-
 ---
 
 ## 🛠️ Workflow Steps
