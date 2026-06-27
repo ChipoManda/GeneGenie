@@ -1,4 +1,6 @@
-# GeneGenie: RNA‑seq Preprocessing Pipeline for *Mycobacterium tuberculosis*
+# GeneGenie: RNA‑seq Preprocessing Pipeline for *Mycobacterium tuberculosis*'
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20969981.svg)](https://doi.org/10.5281/zenodo.20969981)
 
 GeneGenie is a modular, containerized Nextflow DSL2 workflow for preprocessing *Mycobacterium tuberculosis* RNA‑seq data, from raw FASTQ files to gene‑level count tables and comprehensive QC reports.
 
