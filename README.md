@@ -244,8 +244,9 @@ If you use GeneGenie in your research or publications, please cite:
 
 > Chipo Manda (2026). GeneGenie: a Nextflow DSL2 pipeline for *Mycobacterium tuberculosis* RNA‑seq preprocessing (software).  
 > https://github.com/ChipoManda/GeneGenie
+> https://doi.org/10.5281/zenodo.20969981
 
-A DOI‑based citation will be provided once the software is archived (e.g., via Zenodo) and the JOSS paper is published.
+
 
 ---
 
